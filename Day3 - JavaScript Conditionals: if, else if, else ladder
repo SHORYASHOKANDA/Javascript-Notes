@@ -1,0 +1,120 @@
+1. Conditionals in JavaScript
+Conditionals are used to execute different blocks of code based on certain conditions.
+
+if Statement:
+Purpose: Executes a block of code if the specified condition is true.
+javascript
+Copy code
+if (condition) {
+    // code to be executed if condition is true
+}
+
+Example:
+let age = 18;
+if (age >= 18) {
+    console.log("You are an adult.");
+}
+
+else if Statement:
+Purpose: Checks an additional condition if the previous if condition is false. You can have multiple else if blocks.
+
+if (condition1) {
+    // code for condition1
+} else if (condition2) {
+    // code for condition2
+}
+Example:
+
+let age = 20;
+if (age < 18) {
+    console.log("You are a minor.");
+} else if (age >= 18 && age < 60) {
+    console.log("You are an adult.");
+}
+else Statement:
+Purpose: Executes a block of code when all previous if or else if conditions are false. Only one else can be used at the end.
+javascript
+
+if (condition) {
+    // code if true
+} else {
+    // code if false
+}
+Example:
+let age = 70;
+if (age < 18) {
+    console.log("You are a minor.");
+} else if (age >= 18 && age < 60) {
+    console.log("You are an adult.");
+} else {
+    console.log("You are a senior citizen.");
+}
+
+if...else Ladder:
+A ladder structure used to check multiple conditions in a sequence.
+
+if (condition1) {
+    // code for condition1
+} else if (condition2) {
+    // code for condition2
+} else {
+    // code if none of the above conditions are true
+}
+Example:
+
+let time = 14;
+if (time < 12) {
+    console.log("Good morning!");
+} else if (time < 18) {
+    console.log("Good afternoon!");
+} else {
+    console.log("Good evening!");
+}
+
+2. JavaScript Operators in Conditionals
+Operators are used to perform operations on variables and values in conditionals.
+
+Comparison Operators:
+These operators compare two values and return a boolean value (true or false).
+
+== (Equal to): Compares two values for equality (ignores data type).
+=== (Strict Equal to): Compares both value and data type.
+!= (Not equal to): Checks if two values are not equal.
+!== (Strict Not Equal to): Checks if both value and data type are not equal.
+> (Greater than): Checks if the left value is greater than the right.
+< (Less than): Checks if the left value is less than the right.
+>= (Greater than or equal to): Checks if the left value is greater than or equal to the right.
+<= (Less than or equal to): Checks if the left value is less than or equal to the right.
+Example:
+let a = 10;
+let b = 5;
+if (a > b) {
+    console.log("a is greater than b");
+}
+Logical Operators:
+Used to combine multiple conditions in a single if, else if, or else.
+
+&& (AND): Returns true if both conditions are true.
+|| (OR): Returns true if at least one condition is true.
+! (NOT): Reverses the boolean value of the condition.
+Example:
+let age = 20;
+let hasTicket = true;
+if (age >= 18 && hasTicket) {
+    console.log("You can enter the event.");
+}
+Ternary Operator:
+A shorthand for if-else conditions, used to assign values based on a condition.
+
+let result = (condition) ? value1 : value2;
+Example:
+let age = 16;
+let status = (age >= 18) ? "Adult" : "Minor";
+console.log(status); // Outputs: Minor
+
+3. Key Points to Remember
+if statements allow you to check conditions and execute code accordingly.
+else if allows multiple checks, and else provides a default action.
+Comparison operators are essential for comparing values and making decisions.
+Logical operators (&&, ||, !) are used to combine multiple conditions.
+The ternary operator offers a concise way to handle simple conditionals.
