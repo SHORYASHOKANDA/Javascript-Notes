@@ -1,0 +1,112 @@
+1. Variables
+Variables are used to store data that can be used and modified later in a program.
+
+Ways to Declare Variables:
+var:
+
+Function-scoped.
+Can be redeclared and updated.
+Avoid using in modern JavaScript due to potential scoping issues.
+let:
+
+Block-scoped (restricted to the block where it’s declared).
+Can be updated but not redeclared in the same scope.
+const:
+
+Block-scoped.
+Cannot be updated or redeclared.
+Used for constants (values that don’t change).
+Example:
+javascript
+Copy code
+let age = 25;       // Block-scoped variable
+const pi = 3.14;    // Constant value
+var name = "John";  // Function-scoped variable
+2. Data Types
+JavaScript has two main categories of data types: Primitive and Reference.
+
+Primitive Data Types:
+Number:
+
+Represents numeric values (e.g., 5, 3.14).
+Special values: Infinity, -Infinity, NaN (Not a Number).
+String:
+
+Textual data enclosed in single ('), double (") or template literals (`).
+Example: "Hello", 'World', `Hi, ${name}`.
+Boolean:
+
+Represents true or false.
+Null:
+
+Represents an intentional absence of value.
+Example: let result = null;
+Undefined:
+
+A variable declared but not assigned a value.
+Example: let score; // undefined
+Symbol:
+
+A unique, immutable identifier.
+Reference Data Types:
+Object:
+
+Collection of key-value pairs.
+Example:
+javascript
+Copy code
+let car = { brand: "Tesla", color: "red" };
+Array:
+
+Ordered list of items.
+Example:
+javascript
+Copy code
+let fruits = ["Apple", "Banana", "Cherry"];
+Function:
+
+Reusable block of code that performs an action.
+3. Objects
+Objects are used to store complex data and are the backbone of JavaScript.
+
+Creating an Object:
+Object Literal Syntax:
+
+javascript
+Copy code
+let person = {
+    name: "Alice",
+    age: 30,
+    isEmployed: true
+};
+Accessing Object Properties:
+
+Dot notation: person.name
+Bracket notation: person["age"]
+Adding/Modifying Properties:
+
+javascript
+Copy code
+person.hobby = "Reading"; // Adds a new property
+person.age = 31;         // Updates the age
+Deleting Properties:
+
+javascript
+Copy code
+delete person.isEmployed;
+Methods:
+
+Functions inside an object.
+javascript
+Copy code
+let calculator = {
+    add: function(a, b) {
+        return a + b;
+    }
+};
+console.log(calculator.add(2, 3)); // 5
+4. Key Points to Remember
+Use const for values that shouldn’t change, let for mutable variables, and avoid var.
+Understand the difference between primitive (copied by value) and reference (copied by reference) data types.
+Objects and arrays are mutable and powerful for structuring data.
+JavaScript objects can hold methods, making them versatile for dynamic programming.
