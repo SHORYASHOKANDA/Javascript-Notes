@@ -1,0 +1,48 @@
+1. What are Strings?
+Strings represent text in JavaScript.
+They are enclosed in single quotes ('), double quotes ("), or backticks (`) for template literals.
+Examples
+
+let str1 = 'Hello';
+let str2 = "World";
+let str3 = `Hello, ${str2}`; // Template literal
+2. String Properties
+.length: Returns the length of the string.
+
+let text = "JavaScript";
+console.log(text.length); // Output: 10
+3. Common String Methods
+.toUpperCase() / .toLowerCase(): Convert to uppercase or lowercase.
+
+let text = "JavaScript";
+console.log(text.toUpperCase()); // Output: JAVASCRIPT
+console.log(text.toLowerCase()); // Output: javascript
+.slice(start, end): Extracts a part of a string.
+
+let text = "JavaScript";
+console.log(text.slice(0, 4)); // Output: Java
+.concat(): Joins two or more strings.
+
+let text1 = "Hello";
+let text2 = "World";
+console.log(text1.concat(" ", text2)); // Output: Hello World
+.trim(): Removes whitespace from both ends of a string.
+
+let text = "   Hello World   ";
+console.log(text.trim()); // Output: Hello World
+.includes(substring): Checks if a string contains a specific substring.
+
+let text = "JavaScript is fun";
+console.log(text.includes("fun")); // Output: true
+4. Template Literals
+Use backticks (`) for multi-line strings and embedding expressions using ${}.
+
+let name = "John";
+let message = `Hello, ${name}! Welcome.`;
+console.log(message); // Output: Hello, John! Welcome.
+5. Strings are Immutable
+Strings cannot be changed after creation, but new strings can be created from them.
+Example:
+let text = "Hello";
+text[0] = "h"; // No effect
+console.log(text); // Output: Hello
