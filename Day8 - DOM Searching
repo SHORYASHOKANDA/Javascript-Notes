@@ -1,0 +1,67 @@
+DOM Searching in JavaScript: Notes
+DOM searching involves finding and selecting elements from the Document Object Model (DOM) using JavaScript. 
+Here are the main methods for DOM searching:
+
+1. Basic Searching Methods
+
+getElementById()
+
+Finds a single element by its id attribute.
+Returns the first match or null if not found.
+Example:
+let element = document.getElementById('myId');
+
+getElementsByClassName()
+
+Returns a live HTMLCollection of elements with the specified class name.
+Example :
+let elements = document.getElementsByClassName('myClass');
+
+getElementsByTagName()
+
+Returns a live HTMLCollection of elements with the specified tag name (e.g., div, p).
+Example:
+
+let elements = document.getElementsByTagName('div');
+
+2. Modern Searching Methods
+querySelector()
+
+Find the first element matching a CSS selector.
+Example:
+
+let element = document.querySelector('.myClass');
+
+querySelectorAll()
+
+Returns a static NodeList of all elements matching a CSS selector.
+Example:
+let elements = document.querySelectorAll('div.myClass');
+
+3. Navigational Searching
+Use DOM navigation properties to find elements relative to others:
+parentNode / parentElement: Access the parent of a node.
+
+childNodes: Access all child nodes (including text and comment nodes).
+
+children: Access element-only child nodes.
+
+nextSibling / previousSibling: Navigate between sibling nodes.
+
+nextElementSibling / previousElementSibling: Navigate between sibling elements.
+
+4. Filtering Results
+Use JavaScript array methods like filter() or forEach() on collections to refine searches.
+Example: Filter elements by a specific condition:
+
+let divs = document.querySelectorAll('div');
+let filteredDivs = Array.from(divs).filter(div => div.textContent.includes('Hello'));
+
+5. Best Practices
+Prefer querySelector and querySelectorAll for flexibility with CSS selectors.
+Use getElementById for quick access to uniquely identified elements.
+Avoid using outdated methods like document.all.
+
+Always cache search results if used repeatedly for better performance.
+
+Mastering DOM searching allows dynamic interaction with web pages, enabling tasks like form validation, dynamic content updates, and element manipulation.
