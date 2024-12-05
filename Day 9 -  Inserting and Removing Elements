@@ -1,0 +1,66 @@
+1. Creating Elements
+document.createElement(tagName): Creates a new element with the specified tag.
+Example:
+const newDiv = document.createElement('div');
+
+
+2. Adding Content
+element.textContent: Adds or updates text inside an element.
+element.innerHTML: Adds or updates HTML content inside an element.
+
+
+3. Inserting Elements
+appendChild(childNode): Adds a child element at the end of the parent.
+Example:
+parentNode.appendChild(childNode);
+insertBefore(newNode, referenceNode): Inserts a new node before a specified child.
+Example:
+parentNode.insertBefore(newNode, referenceNode);
+
+
+4. Removing Elements
+parentNode.removeChild(childNode): Removes a specific child element from its parent.
+Example:
+parentNode.removeChild(childNode);
+element.remove(): Removes an element directly without referencing its parent.
+Example:
+element.remove();
+
+
+5. Replacing Elements
+replaceChild(newNode, oldNode): Replaces an existing child node with a new one.
+Example:
+parentNode.replaceChild(newNode, oldNode);
+
+
+6. Cloning Elements
+element.cloneNode(deep): Creates a copy of the element.
+deep = true: Clones the element and its children.
+deep = false: Clones only the element.
+Example:
+const clonedElement = element.cloneNode(true);
+
+
+7. Dynamic Element Insertion
+insertAdjacentHTML(position, htmlString): Inserts an HTML string at a specified position relative to an element.
+Positions:
+"beforebegin": Before the element itself.
+"afterbegin": Inside the element, before its first child.
+"beforeend": Inside the element, after its last child.
+"afterend": After the element itself.
+Example:
+element.insertAdjacentHTML('beforeend', '<p>New Content</p>');
+
+
+8. Adding to Specific Locations
+prepend(childNode): Adds a child at the beginning of the parent.
+Example:
+parentNode.prepend(childNode);
+after(newNode): Inserts a new node after an existing element.
+Example:
+element.after(newNode);
+before(newNode): Inserts a new node before an existing element.
+Example:
+element.before(newNode);
+
+These methods provide full control over dynamically modifying the DOM in JavaScript!
