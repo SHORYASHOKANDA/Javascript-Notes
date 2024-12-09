@@ -1,0 +1,53 @@
+1. Events
+Definition: Actions or occurrences detected by JavaScript, like clicks, keypresses, or page loads.
+
+Examples:
+click: Triggered when an element is clicked.
+keydown: Fired when a key is pressed.
+mouseover: Fired when the mouse pointer enters an element.
+
+Event Listeners: Use addEventListener to attach a handler:
+
+element.addEventListener('click', function() {
+    console.log('Element clicked!');
+});
+
+2. Event Bubbling
+Definition: A mechanism where an event starts from the deepest target element and propagates upwards through its ancestors.
+
+Phases:
+Capture Phase: Event moves down the DOM tree.
+Target Phase: Event reaches the target element.
+Bubbling Phase: Event propagates back up the DOM tree.
+Stopping Propagation:
+Use event.stopPropagation() to prevent bubbling.
+
+Example:
+document.getElementById('child').addEventListener('click', function(event) {
+    console.log('Child clicked');
+    event.stopPropagation();
+});
+
+3. setInterval
+Definition: Executes a function repeatedly at specified intervals.
+Syntax:
+setInterval(function, milliseconds);
+Use Case: Useful for tasks like updating a clock or refreshing data.
+Example:
+setInterval(() => {
+    console.log('Repeating every second');
+}, 1000);
+
+Clear Interval: Use clearInterval(intervalID) to stop it.
+
+4. setTimeout
+Definition: Executes a function once after a specified delay.
+Syntax:
+setTimeout(function, milliseconds);
+Use Case: Useful for delaying a task or scheduling it.
+Example:
+setTimeout(() => {
+    console.log('Executed after 2 seconds');
+}, 2000);
+
+Clear Timeout: Use clearTimeout(timeoutID) to cancel it.
