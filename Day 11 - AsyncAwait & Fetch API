@@ -1,0 +1,63 @@
+Async/Await in JavaScript
+
+Definition: Async/Await is a syntax introduced in ES8 (2017) that simplifies writing asynchronous code, making it easier to read and write.
+
+Key Points:
+async is used to declare a function as asynchronous.
+Inside an async function, you can use await to pause the execution until a Promise is resolved or rejected.
+Makes asynchronous code look synchronous.
+
+Helps handle Promises without the need for .then() and .catch() chaining.
+
+Example:
+async function fetchData() {
+    try {
+        let response = await fetch('https://api.example.com/data');
+        let data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+fetchData();
+Fetch API in JavaScript
+
+Definition: The Fetch API provides a modern interface for making HTTP requests in JavaScript.
+
+Key Features:
+Returns a Promise, enabling asynchronous operations.
+Supports GET, POST, PUT, DELETE, etc., methods for web requests.
+Allows handling of JSON, text, and other formats in responses.
+Supports additional options such as headers, body, and credentials.
+
+Example:
+
+fetch('https://api.example.com/data', {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+})
+
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+
+Combining Async/Await with Fetch API
+Improves readability and avoids chaining of .then().
+Example:
+async function postData(url = '', data = {}) {
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    });
+    return response.json();
+}
+
+postData('https://api.example.com/submit', { name: 'John' })
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
