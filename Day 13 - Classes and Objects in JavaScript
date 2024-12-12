@@ -1,0 +1,165 @@
+Classes and Objects in JavaScript: Object-Oriented Programming (OOP)
+JavaScript supports Object-Oriented Programming (OOP) with classes and objects. Here's a breakdown:
+
+Classes
+A class is a blueprint for creating objects.
+Introduced in ES6, classes provide a cleaner syntax for object-oriented programming compared to constructor functions.
+Defining a Class
+
+class Person {
+  constructor(name, age) {
+    this.name = name;  // Instance property
+    this.age = age;    // Instance property
+  }
+
+  // Method
+  greet() {
+    console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+  }
+}
+
+Creating an Object
+
+const person1 = new Person('Alice', 25);
+person1.greet();  // Output: Hello, my name is Alice and I am 25 years old.
+
+Key Concepts in Classes
+Constructor Method
+
+A special method used to initialize object properties.
+Automatically called when a new instance is created.
+
+constructor(property1, property2) {
+  this.property1 = property1;
+  this.property2 = property2;
+}
+Methods
+
+Functions defined inside the class.
+Can be accessed using the object.
+
+class Example {
+  sayHello() {
+    console.log('Hello!');
+  }
+}
+
+Static Methods
+
+Methods associated with the class itself, not the instances.
+Called directly on the class.
+
+class MathUtil {
+  static add(a, b) {
+    return a + b;
+  }
+}
+console.log(MathUtil.add(5, 10));  // Output: 15
+Getters and Setters
+
+Used to get and set property values.
+Encapsulates access to class properties.
+
+class Circle {
+  constructor(radius) {
+    this._radius = radius;
+  }
+  
+  get radius() {
+    return this._radius;
+  }
+  
+  set radius(value) {
+    if (value > 0) {
+      this._radius = value;
+    } else {
+      console.log('Radius must be positive.');
+    }
+  }
+}
+
+const circle = new Circle(10);
+console.log(circle.radius);  // Output: 10
+circle.radius = 15;
+console.log(circle.radius);  // Output: 15
+Inheritance
+Classes can inherit properties and methods from other classes using the extends keyword.
+javascript
+Copy code
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  
+  speak() {
+    console.log(`${this.name} makes a noise.`);
+  }
+}
+
+class Dog extends Animal {
+  speak() {
+    console.log(`${this.name} barks.`);
+  }
+}
+
+const dog = new Dog('Buddy');
+dog.speak();  // Output: Buddy barks.
+
+Encapsulation
+Restricts direct access to some of the object’s properties or methods.
+Can be achieved using private fields (# prefix, introduced in ES2021).
+
+class BankAccount {
+  #balance;
+
+  constructor(initialBalance) {
+    this.#balance = initialBalance;
+  }
+
+  getBalance() {
+    return this.#balance;
+  }
+
+  deposit(amount) {
+    this.#balance += amount;
+  }
+}
+
+const account = new BankAccount(1000);
+console.log(account.getBalance());  // Output: 1000
+account.deposit(500);
+console.log(account.getBalance());  // Output: 1500
+
+Polymorphism
+Allows a subclass to override a method from the parent class.
+
+class Shape {
+  area() {
+    console.log('Area is undefined.');
+  }
+}
+
+class Rectangle extends Shape {
+  constructor(width, height) {
+    super();
+    this.width = width;
+    this.height = height;
+  }
+
+  area() {
+    return this.width * this.height;
+  }
+}
+
+const rect = new Rectangle(10, 20);
+console.log(rect.area());  // Output: 200
+
+Advantages of Classes in JS
+Improves code reusability through inheritance.
+Makes code modular and maintainable.
+Provides a cleaner and more structured approach to OOP.
+
+Use Cases
+Building UI components.
+Representing entities in a game (e.g., Player, Enemy).
+Managing application state in frameworks like React (e.g., StateManager).
